@@ -8,7 +8,3 @@ class Ability:
     def attack(self):
         atk = random.randint(0, self.max_dmg)
         return atk
-    
-ability1 = Ability('laser beam', 20)
-print(ability1.name)
-print(ability1.attack())

@@ -8,7 +8,3 @@ class Armor:
     def block(self):
         blk = random.randint(0, self.max_block)
         return blk
-
-armor = Armor('shield', 15)
-print(armor.name)
-print(armor.block())
