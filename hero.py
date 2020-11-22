@@ -68,10 +68,3 @@ class Hero:
         else:
             return True
             print("You're still alive!")
-    
-
-
-hero = Hero('Ryan', 200)
-weapon = Weapon('big gun', 90)
-hero.add_weapon(weapon)
-print(hero.attack())
