@@ -11,16 +11,16 @@ class Arena:
     
     def create_hero(self):
         hero_name = input('Hero name: ')
-        hero = Hero(hero_name)
+        hero = Hero(hero_name, current_hp=100)
         add_item = None
         while add_item != "4":
            add_item = input("[1] Add ability\n[2] Add weapon\n[3] Add armor\n[4] Done adding items\n\nYour choice: ")
            if add_item == "1":
-                hero.create_ability()
+                self.create_ability()
            elif add_item == "2":
-                hero.create_weapon()
+                self.create_weapon()
            elif add_item == "3":
-                hero.create_armor()
+                self.create_armor()
         return hero
 
     def create_ability(self):
