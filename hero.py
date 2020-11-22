@@ -10,6 +10,14 @@ class Hero:
         self.starting_hp = starting_hp
         self.abilities = list()
         self.armors = list()
+        self.kills = 0
+        self.deaths = 0
+
+    def add_kill(self, num_kills):
+        self.kills += num_kills
+    
+    def add_death(self, num_deaths):
+        self.deaths += num_deaths
     
     def fight(self, opponent):
         if self.abilities == [] or opponent.abilities == []:
@@ -20,8 +28,12 @@ class Hero:
             self.take_damage(opponent.attack())
             opponent.take_damage(self.attack())
         if opponent.is_alive() == False:
+            self.kills += 1
+            villain.deaths += 1
             print(f"{self.name} wins!")
         else:
+            villain.kills += 1
+            self.deaths += 1
             print(f"{villain.name} wins!")
 
     def attack(self):
@@ -56,6 +68,8 @@ class Hero:
         else:
             return True
             print("You're still alive!")
+    
+
 
 hero = Hero('Ryan', 200)
 weapon = Weapon('big gun', 90)
