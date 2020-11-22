@@ -1,6 +1,7 @@
 import random
 from ability import Ability
 from armor import Armor
+from weapon import Weapon
 
 class Hero:
     def __init__(self, name, current_hp, starting_hp = 100):
@@ -38,6 +39,9 @@ class Hero:
     def add_ability(self, ability):
         self.abilities.append(ability)
 
+    def add_weapon(self, weapon):
+        self.abilities.append(weapon)
+
     def add_armor(self, armor):
         self.armors.append(armor)
     
@@ -54,9 +58,6 @@ class Hero:
             print("You're still alive!")
 
 hero = Hero('Ryan', 200)
-villain = Hero('Joe', 200)
-ability1 = Ability('laser beam', 50)
-ability2 = Ability('punch', 100)
-hero.add_ability(ability1)
-villain.add_ability(ability2)
-hero.fight(villain)
+weapon = Weapon('big gun', 90)
+hero.add_weapon(weapon)
+print(hero.attack())
