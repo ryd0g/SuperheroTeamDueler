@@ -11,9 +11,17 @@ class Hero:
         self.armors = list()
     
     def fight(self, opponent):
-        fighters = [self.name, opponent]
-        winner = random.choice(fighters)
-        print(f'{winner} won!')
+        if self.abilities == [] or opponent.abilities == []:
+            print("It's a draw!")
+        else:
+            print('Let the fight begin!')
+        while(self.is_alive() == True and opponent.is_alive() == True):
+            self.take_damage(opponent.attack())
+            opponent.take_damage(self.attack())
+        if opponent.is_alive() == False:
+            print(f"{self.name} wins!")
+        else:
+            print(f"{villain.name} wins!")
 
     def attack(self):
         total_dmg = 0
@@ -37,8 +45,18 @@ class Hero:
         self.current_hp -= dmg - self.defend()
         return self.current_hp
 
+    def is_alive(self):
+        if self.current_hp <= 0:
+            return False
+            print("You Died")
+        else:
+            return True
+            print("You're still alive!")
+
 hero = Hero('Ryan', 200)
-shield = Armor('shield', 50)
-hero.add_armor(shield)
-hero.take_damage(60)
-print(hero.current_hp)
+villain = Hero('Joe', 200)
+ability1 = Ability('laser beam', 50)
+ability2 = Ability('punch', 100)
+hero.add_ability(ability1)
+villain.add_ability(ability2)
+hero.fight(villain)
