@@ -5,10 +5,10 @@ from hero import Hero
 from team import Team
 
 class Arena:
-    def __init__(self):
-        self.team_one = None
-        self.team_two = None
-    
+    def __init__(self, team_one, team_two):
+        self.team_one = Team(team_one)
+        self.team_two = Team(team_two)
+
     def create_hero(self):
         hero_name = input('Hero name: ')
         hero = Hero(hero_name, current_hp=100)
@@ -84,8 +84,8 @@ if __name__ == "__main__":
     game_is_running = True
 
     # Instantiate Game Arena
-    arena = Arena()
-
+    arena = Arena('1', '2')
+    print('Welcome to the Superhero Fighter!')
     #Build Teams
     arena.build_team_one()
     arena.build_team_two()

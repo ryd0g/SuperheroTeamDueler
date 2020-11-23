@@ -4,6 +4,8 @@ class Team:
     def __init__(self, name):
         self.name = name
         self.heroes = list()
+        self.living_heroes = list()
+        self.living_opponents = list()
 
     def add_hero(self, hero):
         self.heroes.append(hero)
@@ -31,16 +33,14 @@ class Team:
             hero.current_hp = health
 
     def attack(self, other_team):
-        living_heroes = list()
-        living_opponents = list()
 
         for hero in self.heroes:
-            living_heroes.append(hero)
+            self.living_heroes.append(hero)
 
         for hero in other_team.heroes:
-            living_opponents.append(hero)
+            other_team.living_opponents.append(hero)
         
-        while len(living_heroes) > 0 and len(living_opponents)> 0:
+        while len(self.living_heroes) > 0 and len(other_team.living_opponents)> 0:
             randomhero1 = random.choice(self.living_heroes)
             randomhero2 = random.choice(other_team.living_opponents)
             randomhero1.fight(randomhero2)
