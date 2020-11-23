@@ -20,7 +20,7 @@ class Hero:
         self.deaths += num_deaths
     
     def fight(self, opponent):
-        if self.abilities == [] or opponent.abilities == []:
+        if len(self.abilities) == 0 or len(opponent.abilities) == 0:
             print("It's a draw!")
         else:
             print('Let the fight begin!')
