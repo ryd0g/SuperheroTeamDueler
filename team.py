@@ -33,7 +33,6 @@ class Team:
             hero.current_hp = health
 
     def attack(self, other_team):
-
         for hero in self.heroes:
             self.living_heroes.append(hero)
 
