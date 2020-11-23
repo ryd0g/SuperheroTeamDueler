@@ -91,7 +91,6 @@ if __name__ == "__main__":
     arena.build_team_two()
 
     while game_is_running:
-
         arena.team_battle()
         arena.show_stats()
         play_again = input("Play Again? Y or N: ")
@@ -99,7 +98,6 @@ if __name__ == "__main__":
         #Check for Player Input
         if play_again.lower() == "n":
             game_is_running = False
-
         else:
             #Revive heroes to play again
             arena.team_one.revive_heroes()
