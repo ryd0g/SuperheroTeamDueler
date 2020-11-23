@@ -29,10 +29,10 @@ class Hero:
             opponent.take_damage(self.attack())
         if opponent.is_alive() == False:
             self.kills += 1
-            villain.deaths += 1
+            opponent.deaths += 1
             print(f"{self.name} wins!")
         else:
-            villain.kills += 1
+            opponent.kills += 1
             self.deaths += 1
             print(f"{villain.name} wins!")
 
